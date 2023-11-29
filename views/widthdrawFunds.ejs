@@ -1,0 +1,130 @@
+
+<%- include('partials/dashboardHeader')%>
+
+
+ <!-- Content Wrapper. Contains page content -->
+ <div class="content-wrapper" style="min-height: 688.391px;">
+  <!-- Content Header (Page header) -->
+  <section class="content-header">
+    <div class="container-fluid">
+      <div class="row mb-2">
+        <div class="col-sm-6">
+          <h1>Withdrawal</h1>
+        </div>
+        <div class="col-sm-6">
+          <ol class="breadcrumb float-sm-right">
+            <li class="breadcrumb-item"><a href="dashboard">Home</a></li>
+            <li class="breadcrumb-item active">Withdrawal</li>
+          </ol>
+        </div>
+      </div>
+    </div><!-- /.container-fluid -->
+  </section>
+  <!-- Main content -->
+  <section class="content">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-12">
+            <div class="row">
+               <div class="col-md-12">
+                  <h4>Amount Available for Withdrawal:
+                      <span class="text-success"><%=user.available%></span></h4>
+              </div>
+            </div>
+        </div>
+       <div class="col-md-12">
+        <div class="row" id="content-loader">
+                      <div class="col-md-12">
+              <form class="form" action="/widthdraw/<%=user._id%>" method="post">
+                <input type="hidden" name="" value="">   
+                               <div class="form-row">
+                    <div class="form-group col-md-6 p-3 h-100">
+                      <div class="card">
+                        <div class="card-body">
+                          <h4 class="mb-3">Enter Amount to Withdrawal</h4>
+                          <input id="amount" type="number" name="amount" class="form-control" value="" placeholder="Enter Amount" step="0.01" required>
+                          <small id="amountError" class="d-none text-danger d-block"></small>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="form-group col-md-6 p-3 h-100">
+                        <div class="card">
+                          <div class="card-body">
+                            <h4 class="mb-3">Select Payment Method</h4>
+                            <select id="wdmethods" class="form-control" name="payment_method" required>
+                              <option value="">--Select Withdrawal Method--</option>
+                              
+                              <option id="bank" value="bank">Bank</option>
+                              <option id="bitcoin" value="bitcoin">Bitcoin</option>
+                              <option id="ethereum" value="ethereum">Ethereum</option>
+                              <option id="shiba" value="shiba">Shiba Inu</option>
+                              <option id="doge" value="doge">Doge</option>
+                              <option id="cardano" value="cardano">Cardano</option>
+                              <option id="ripple" value="ripple">Ripple</option>
+                            </select>
+                            <small id="selectMethod" class="text-danger d-block"></small>
+
+                            <span class="payment-meth bank" style="">
+                                <label for="">Bank Name</label>
+                                <input id="bank_name" type="text" name="bankName" class="form-control" value="" placeholder="Bank Name">
+                                <small id="bankNameError" class="d-none text-danger d-block"></small>
+                                <label for="">Account Name</label>
+                                <input id="account_name" type="text" name="accountName" class="form-control" value="" placeholder="Account Name">
+                                <small id="accountNameError" class="d-none text-danger d-block"></small>
+                                <label for="">Account Number</label>
+                                <input id="account_number" type="text" name="accountNumb" class="form-control" value="" placeholder="Account Number">
+                                <small id="accountNumberError" class="d-none text-danger d-block"></small>
+                            </span>
+                            <span class="payment-meth bitcoin" style="display: none;">
+                              <label for="">Bitcoin Address</label>
+                              <input id="bitcoin_address" type="text" name="wallet" class="form-control" value="" placeholder="Bitcoin Address">
+                              <small id="bitcoinAddressError" class="d-none text-danger d-block"></small>
+                            </span>
+                            <span class="payment-meth ethereum" style="display: none;">
+                              <label for="">Ethereum Address</label>
+                              <input id="ethereum_address" type="text" name="wallet" class="form-control" value="" placeholder="Ethereum Address">
+                              <small id="ethereumAddressError" class="d-none text-danger d-block"></small>
+                            </span>
+                            <span class="payment-meth shiba" style="display: none;">
+                              <label for="">Shiba Inu Address</label>
+                              <input id="shiba_address" type="text" name="wallet" class="form-control" value="" placeholder="Shiba Inu Address">
+                              <small id="shibaAddressError" class="d-none text-danger d-block"></small>
+                            </span>
+                            <span class="payment-meth doge" style="display: none;">
+                              <label for="">Doge Address</label>
+                              <input id="doge_address" type="text" name="wallet" class="form-control" value="" placeholder="Doge Address">
+                              <small id="dogeAddressError" class="d-none text-danger d-block"></small>
+                            </span> 
+                            <span class="payment-meth cardano" style="display: none;">
+                              <label for="">Cardano Address</label>
+                              <input id="cardano_address" type="text" name="wallet" class="form-control" value="" placeholder="Cardano Address">
+                              <small id="cardanoAddressError" class="d-none text-danger d-block"></small>
+                            </span>
+                            <span class="payment-meth ripple" style="display: none;">
+                              <label for="">Ripple Address</label>
+                              <input id="ripple_address" type="text" name="wallet" class="form-control" value="" placeholder="Ripple Address">
+                              <small id="rippleAddressError" class="d-none text-danger d-block"></small>
+                              <br>
+                              <label for="">Ripple XRP Tag</label>
+                              <input id="ripple_tag" type="text" name="ripple_tag" class="form-control" value="" placeholder="Ripple XRP Tag (optional)">
+                              <small id="tagAddressError" class="d-none text-danger d-block"></small>
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="form-group col-md-7 mx-auto">
+                        <div class="row">
+                          <button type="submit"  onclick="alert('Please wait while your widthdrawal is being processed, OTP verification on its way(compulsory)')" class="btn btn-lg btn-primary col-md-12">Withdraw</button>
+                        </div>
+                      </div>
+                </div>
+              </form>
+          </div>
+        </div>
+        </div>
+
+        
+
+   
+
+<%- include('partials/dashboardFooter')%>

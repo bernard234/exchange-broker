@@ -1,0 +1,1461 @@
+<!-- <%- include('partials/_header.ejs'); -%> -->
+
+<nav class="navbar bg-dark navbar-expand" style="background: #353535 !important;">
+    <div class="container">
+      <ul class="navbar-nav">
+        <li class="nav-item pl-3">
+          <i class="fas fa-globe text-white"> Lang:</i>
+          <select class="no-select py-1 text-white-50" style="width: 60px" id="language" onchange="changeLanguageByButtonClick()">
+            <option value="af">Afrikanns</option>
+            <option value="sq">Albanian</option>
+            <option value="ar">Arabic</option>
+            <option value="hy">Armenian</option>
+            <option value="eu">Basque</option>
+            <option value="bn">Bengali</option>
+            <option value="bg">Bulgarian</option>
+            <option value="ca">Catalan</option>
+            <option value="km">Cambodian</option>
+            <option value="zh-CN">Chinese (Mandarin)</option>
+            <option value="hr">Croation</option>
+            <option value="cs">Czech</option>
+            <option value="da">Danish</option>
+            <option value="nl">Dutch</option>
+            <option value="en" selected="">English</option>
+            <option value="et">Estonian</option>
+            <option value="fj">Fiji</option>
+            <option value="fi">Finnish</option>
+            <option value="fr">French</option>
+            <option value="ka">Georgian</option>
+            <option value="de">German</option>
+            <option value="el">Greek</option>
+            <option value="gu">Gujarati</option>
+            <option value="he">Hebrew</option>
+            <option value="hi">Hindi</option>
+            <option value="hu">Hungarian</option>
+            <option value="is">Icelandic</option>
+            <option value="id">Indonesian</option>
+            <option value="ga">Irish</option>
+            <option value="it">Italian</option>
+            <option value="ja">Japanese</option>
+            <option value="jw">Javanese</option>
+            <option value="ko">Korean</option>
+            <option value="la">Latin</option>
+            <option value="lv">Latvian</option>
+            <option value="lt">Lithuanian</option>
+            <option value="mk">Macedonian</option>
+            <option value="ms">Malay</option>
+            <option value="ml">Malayalam</option>
+            <option value="mt">Maltese</option>
+            <option value="mi">Maori</option>
+            <option value="mr">Marathi</option>
+            <option value="mn">Mongolian</option>
+            <option value="ne">Nepali</option>
+            <option value="no">Norwegian</option>
+            <option value="fa">Persian</option>
+            <option value="pl">Polish</option>
+            <option value="pt">Portuguese</option>
+            <option value="pa">Punjabi</option>
+            <option value="qu">Quechua</option>
+            <option value="ro">Romanian</option>
+            <option value="ru">Russian</option>
+            <option value="sm">Samoan</option>
+            <option value="sr">Serbian</option>
+            <option value="sk">Slovak</option>
+            <option value="sl">Slovenian</option>
+            <option value="es">Spanish</option>
+            <option value="sw">Swahili</option>
+            <option value="sv">Swedish </option>
+            <option value="ta">Tamil</option>
+            <option value="tt">Tatar</option>
+            <option value="te">Telugu</option>
+            <option value="th">Thai</option>
+            <option value="bo">Tibetan</option>
+            <option value="to">Tonga</option>
+            <option value="tr">Turkish</option>
+            <option value="uk">Ukranian</option>
+            <option value="ur">Urdu</option>
+            <option value="uz">Uzbek</option>
+            <option value="vi">Vietnamese</option>
+            <option value="cy">Welsh</option>
+            <option value="xh">Xhosa</option>
+          </select>
+        </li>
+      </ul>
+      <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+          <a class="nav-link btn btn-danger" href="/login">Login Account</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link btn btn-primary" href="/register">Register Account</a>
+        </li>
+          </ul>
+    </div>
+  </nav>
+  
+  
+  <nav class="navbar navbar-expand-md navbar-dark bg-dark text-light bg-dark sticky-top" style="background: #444444 !important">
+    <div class="container">
+      <!-- Toggler/collapsibe Button -->
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <!-- Brand -->
+      <a class="navbar-brand" href="/">
+      <!--<img src="ASTROFXOPTS_-_LOGO-removebg-preview.png" class="d-none d-md-inline" title="Astrofxopts" style="height: 40px"/>--->
+      <img src="asset/logo.png" height="69" width="390" class="auto-style1">      </a>
+  
+      <!-- Navbar links -->
+      <div class="collapse navbar-collapse" id="collapsibleNavbar">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item"><a class="nav-link" href="/">HOME</a></li>
+            <li class="nav-item"><a class="nav-link" href="/about">ABOUT US</a></li>
+            <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">LEGAL</a>
+                <div class="dropdown-menu">
+                    <a href="/privacy" class="dropdown-item">TERMS &amp; CONDITIONS</a>
+                    <a href="/faq" class="dropdown-item">FAQS</a>
+                <div>
+            </div></div></li>
+            <li class="nav-item"><a class="nav-link" href="/start">START GUIDE</a></li>
+            <li class="nav-item"><a class="nav-link" href="/contact">CONTACT US</a></li>
+            <li class="nav-item"><a class="nav-link" href="/affiliate">AFFILIATE</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+        
+  
+   
+  
+  
+  <style>
+  .bycwdgt, .btcwdgt .btcwdgt-header, .btcwdgt .btcwdgt-body, .btcwdgt .btcwdgt-footer {
+      display: inline-block!important;
+  }
+  
+  .btcwdgt-s-price .btcwdgt-body ul li {
+      font-size: 12px !important;
+      line-height: 1 !important;
+      font-weight: 700 !important;
+      
+  }
+  .price ul li{
+     border-color:#000;
+      
+  }
+  </style><link rel="stylesheet" type="text/css" href="asset/temp/custom1/slick/slick.css">
+  <link rel="stylesheet" type="text/css" href="asset/temp/custom1/slick/slick-theme.css">
+  <style>
+  .slick-dots{bottom: -10px !important;}
+  .slick-dotted.slick-slider{ margin-bottom: 0px;}
+  </style>
+  
+  <div class="hero-image">
+      <div class="animate1"></div>
+      <div class="animate2"></div>
+      <div class="container">
+          <div class="hero-text">
+              <h1>
+                  Your access to <br> global financial markets!
+              <!--	<span class="wow slideInLeft" data-wow-duration="1s">Your access </span>
+                  <span class="wow slideInRight" data-wow-duration="1s">to the global</span>
+                  <span class="wow slideInUp" data-wow-duration="1s">financial market.</span> -->
+              </h1>
+              <ul>
+                  <li class="wow slideInRight" data-wow-duration="1s" style="visibility: visible; animation-duration: 1s; animation-name: slideInRight;">Secure and easy way to trade.</li>
+                  <li class="wow slideInLeft" data-wow-duration="1s" style="visibility: visible; animation-duration: 1s; animation-name: slideInLeft;">230,000+ traders chose Maxtrades-exchange </li>
+              </ul>
+              <a href="/register" class="btn btn-danger mr-2 mt-2 wow slideInLeft" data-wow-duration="1s" style="visibility: visible; animation-duration: 1s; animation-name: slideInLeft;">Create free account</a>
+              
+          </div>
+      </div>
+  </div>
+  
+  <!-- <script src="https://widgets.coingecko.com/coingecko-coin-price-marquee-widget.html"></script>
+  <coingecko-coin-price-marquee-widget coin-ids="bitcoin,ethereum,eos,ripple,litecoin" currency="usd" background-color="#444444" locale="en" font-color="#c0c0c0"></coingecko-coin-price-marquee-widget>
+   -->
+  
+  <div class="ccc-widge bg-pattern">
+  <div class="container">
+      <div class="row">
+          <div class="col-12 col-md-3 py-3">
+              <div class="hero-object wow slideInUp" data-wow-duration="1s" style="visibility: visible; animation-duration: 1s; animation-name: slideInUp;">
+                  <div class="d-flex justify-content-start">
+                      <div class="mr-2">
+                          <img src="asset/temp/custom1/images/icon-aroundtheclock.png">
+                      </div>
+                      <div>
+                          <h3>Short-Term Contracts</h3>
+                          <p class="desc">Trading intra-day, daily or weekly provides unique opportunities.</p>
+                      </div>
+                  </div>
+              </div>
+          </div>
+          <div class="col-12 col-md-3 py-3">
+              <div class="hero-object wow slideInUp" data-wow-duration="1s" style="visibility: visible; animation-duration: 1s; animation-name: slideInUp;">
+                  <div class="d-flex justify-content-start">
+                      <div class="mr-2">
+                          <img src="asset/temp/custom1/images/icon-short-term-trading.png">
+                      </div>
+                      <div>
+                          <h3>Trading Around the Clock</h3>
+                          <p class="desc">24 hours a day, Monday-Saturday only.</p>
+                      </div>
+                  </div>
+              </div>
+          </div>
+          <div class="col-12 col-md-3 py-3">
+              <div class="hero-object wow slideInUp" data-wow-duration="1s" style="visibility: visible; animation-duration: 1s; animation-name: slideInUp;">
+                  <div class="d-flex justify-content-start">
+                      <div class="mr-2">
+                          <img src="asset/temp/custom1/images/icon-active-markets.png">
+                      </div>
+                      <div>
+                          <h3>Active Markets</h3>
+                          <p class="desc">23 hours a day, Monday-Saturday. Whenever you want to trade.</p>
+                      </div>
+                  </div>
+              </div>
+          </div>
+          <div class="col-12 col-md-3 py-3">
+              <div class="hero-object wow slideInUp" data-wow-duration="1s" style="visibility: visible; animation-duration: 1s; animation-name: slideInUp;">
+                  <div class="d-flex justify-content-start">
+                      <div class="mr-2">
+                          <img src="asset/temp/custom1/images/icon-defined-risk.png">
+                      </div>
+                      <div>
+                          <h3>Risk That You Define</h3>
+                          <p class="desc">Know your maximum potential profit or loss up front.</p>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+  </div>
+  
+  
+  
+  
+  
+  
+  
+  <div class="container my-5">
+      <div class="section_title text-center mb-5">
+          <h2 class="wow slideInUp" data-wow-duration="1s" style="visibility: visible; animation-duration: 1s; animation-name: slideInUp;">Trade <span class="text-primary">We are always ahead </span> <br> Professional Solutions for Your Investment.</h2>
+      </div>
+      <div class="row">
+  
+          <div class="col-lg-12">
+  
+          
+          
+          
+          
+       <section class="divider parallax layer-overlay overlay-theme-colored-2" data-bg-img="asset/netema/images/bg/bh5.jpg" style="background:#ccc;">
+        <div class="container pt-90 pb-90">
+          <div class="section-content text-center">
+            <div class="row">
+              <div class="col-md-12">
+                <h2 class="mt-0 mb-50 text-white"> </h2>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-xs-12 col-sm-6 col-md-3 mb-md-50">
+                <div class="funfact text-center">
+                  <i class="pe-7s-smile text-theme-colored2"></i>
+                  <h2><font color="white">9K+</font></h2>
+                  <h5 class="text-white text-uppercase mb-0">Total Members</h5>
+                </div>
+              </div>
+              <div class="col-xs-12 col-sm-6 col-md-3 mb-md-50">
+                <div class="funfact text-center">
+                  <i class="pe-7s-clock text-theme-colored2"></i><br>
+                 <h2><font color="white">5K+</font></h2>
+                  <h5 class="text-white text-uppercase mb-0">TRANSACTIONS PER HOURS</h5>
+                </div>
+              </div>
+              <div class="col-xs-12 col-sm-6 col-md-3 mb-md-50">
+                <div class="funfact text-center">
+                  <i class="pe-7s-piggy text-theme-colored2"></i>
+            <h2><font color="white">100K+</font></h2>
+                  <h5 class="text-white text-uppercase mb-0">Total Deposited</h5>
+                </div>
+              </div>
+              <div class="col-xs-12 col-sm-6 col-md-3 mb-md-0">
+                <div class="funfact text-center">
+                  <i class="pe-7s-upload text-theme-colored2"></i>
+                <h2><font color="white">200K+</font></h2>
+                  <h5 class="text-white text-uppercase mb-0">Total Withdrawals</h5>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+          
+          
+          
+          
+          
+              
+          </div>
+  
+  
+      </div>
+  </div>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <div class="container my-5">
+      <div class="section_title text-center mb-5">
+          <h2 class="wow slideInUp" data-wow-duration="1s" style="visibility: visible; animation-duration: 1s; animation-name: slideInUp;">How <span class="text-primary">it</span> work</h2>
+          <p class="title_p wow slideInUp" data-wow-duration="1s" style="visibility: visible; animation-duration: 1s; animation-name: slideInUp;">Start Trading in 3 Steps</p>
+      </div>
+      <div class="row">
+          <div class="col-lg-4">
+              <div class="work_step work_first text-center wow slideInUp" data-wow-duration="1s" style="visibility: visible; animation-duration: 1s; animation-name: slideInUp;">
+                  <div class="work_icon">
+                      <i class="flaticon-money-4"></i>
+                  </div>
+                  <h2 class="mb_0">Register Account</h2>
+                  <p class="mb_0">Open Account for free in just a few minutes</p>
+              </div>
+          </div>
+          <div class="col-lg-4">
+              <div class="work_step work_middle text-center wow slideInUp" data-wow-duration="1s" style="visibility: visible; animation-duration: 1s; animation-name: slideInUp;">
+                  <div class="work_icon">
+                      <i class="flaticon-money-6"></i>
+                  </div>
+                  <h2 class="mb_0">Fund Your Account</h2>
+                  <p class="mb_0">Login to Maxtrades-exchange and make your deposit to activate your trade.</p>
+              </div>
+          </div>
+          <div class="col-lg-4">
+              <div class="work_step text-center wow slideInUp" data-wow-duration="1s" style="visibility: visible; animation-duration: 1s; animation-name: slideInUp;">
+                  <div class="work_icon">
+                      <i class="flaticon-money-5"></i>
+                  </div>
+                  <h2 class="mb_0">Invest</h2>
+                  <p class="mb_0">Start getting profits to your trading account once your trade is activated.</p>
+              </div>
+          </div>
+      </div>
+  </div>
+  
+  
+  
+  
+  
+  
+  <div class="container my-5">
+      <div class="section_title text-center mb-5">
+          <h2 class="wow slideInUp" data-wow-duration="1s" style="visibility: visible; animation-duration: 1s; animation-name: slideInUp;">Trade <span class="text-primary">MT </span> 4&amp;5</h2>
+      </div>
+      <div class="row">
+  
+          <div class="col-lg-6">
+  
+              <img src="asset/temp/custom1/images/mt1.jpg">
+              
+          </div>
+  
+  
+          <div class="col-lg-6">
+          
+      <img src="asset/temp/custom1/images/mt2.jpg">
+  
+          </div>
+      </div>
+  </div>
+  
+  
+  
+  
+  
+  
+  <div class="container my-5">
+      <div class="section_title text-center mb-5">
+          <h2 class="wow slideInUp" data-wow-duration="1s" style="visibility: visible; animation-duration: 1s; animation-name: slideInUp;">Trade <span class="text-primary">Latest</span> Withdrawals</h2>
+      </div>
+      <div class="row">
+  
+          <div class="col-lg-12">
+              
+              
+  <div class="section-full  p-t80 p-b80 bg-white">
+                  <div class="container">
+  
+                      <div class="section-head text-center">
+                          <span class="wt-title-subline font-16 text-gray-dark m-b15"></span>
+                          <h2 class="text-uppercase"> </h2>
+                          <div class="wt-separator-outer">
+                              <div class="wt-separator bg-primary"></div>
+                          </div>
+                          <p></p>
+                      </div>
+  
+                      <div class="table-responsive" style="height:400px; overflow-y:auto; overflow-x:auto;">
+                          <marquee direction="down" height="100%">
+                              <table class="table" style="width: 100%;">
+                                  <thead>
+                                      <tr>
+                                          <th class="text-center">Status</th>
+                                          <th class="text-center">Amount(USD)</th>
+                                          <th class="text-center">Wallet</th>
+                                      </tr>
+                                  </thead>
+                                  <tbody>
+                                      <tr>
+                                          <td class="text-center"><button class="btn
+                                              btn-info btn-sm"><span class="btn-label"><i class="fa
+                                              fa-check"></i></span>Confirmed</button></td>
+                                          <td class="text-center">$10,000.00</td>
+                                          <td class="text-center">
+                                              3a17c5984af22cd7a443f14457841b3b19a51ea75a30e18bc6a82e4f8732dbca
+                                          </td>
+                                      </tr>
+                                      <tr>
+                                          <td class="text-center"><button class="btn btn-warning btn-sm"><span class="btn-label"><i class="fa fa-warning"></i></span>Pending</button></td>
+                                          <td class="text-center">$51,000.00</td>
+                                          <td class="text-center">
+                                              8a2b9781aa4995625af7d2b008f020ac74e7e0d2a599e93ed995f7c3bc2be9f2
+                                          </td>
+                                      </tr>
+                                      <tr>
+                                          <td class="text-center"><button class="btn
+                                              btn-info btn-sm"><span class="btn-label"><i class="fa
+                                              fa-check"></i></span>Confirmed</button></td>
+                                          <td class="text-center">$24,100.00</td>
+                                          <td class="text-center">
+                                              f007e92cc9f82ba9c8c40c481eec7315fa9abcd85e7249a6cb57e38a2cf22d3e
+                                          </td>
+                                      </tr>
+                                      <tr>
+                                          <td class="text-center"><button class="btn btn-info btn-sm"><span class="btn-label"><i class="fa
+                                              fa-check"></i></span>Confirmed</button></td>
+                                          <td class="text-center">$4,000.00</td>
+                                          <td class="text-center">
+                                              8a2b9781aa4995625af7d2b008f020ac74e7e0d2a599e93ed995f7c3bc2be9f2
+                                          </td>
+                                      </tr>
+                                      <tr>
+                                          <td class="text-center"><button class="btn
+                                              btn-info btn-sm"><span class="btn-label"><i class="fa
+                                              fa-check"></i></span>Confirmed</button></td>
+                                          <td class="text-center">$500</td>
+                                          <td class="text-center">
+                                              00db85ef40da34f3ea76aa60f0b2053eec2d90121e450791c18d8edbfedde6f1
+                                          </td>
+                                      </tr>
+                                      <tr>
+                                          <td class="text-center"><button class="btn
+                                              btn-info btn-sm"><span class="btn-label"><i class="fa
+                                              fa-check"></i></span>Confirmed</button></td>
+                                          <td class="text-center">$240,000</td>
+                                          <td class="text-center">
+                                              b21a418a44ed8b56118facefe7aa8d26541dff811b8a8ca65cfa1346d62c5c48
+                                          </td>
+                                      </tr>
+                                      <tr>
+                                          <td class="text-center"><button class="btn
+                                              btn-info btn-sm"><span class="btn-label"><i class="fa
+                                              fa-check"></i></span>Confirmed</button></td>
+                                          <td class="text-center">$17,000</td>
+                                          <td class="text-center">
+                                              1e652d2899a1d058a20041a9faaeb5dc009101ca412ff09c387e6b281bd1db8b
+                                          </td>
+                                      </tr>
+                                      <tr>
+                                          <td class="text-center"><button class="btn btn-warning btn-sm"><span class="btn-label"><i class="fa fa-warning"></i></span>Pending</button></td>
+                                          <td class="text-center">$51,000</td>
+                                          <td class="text-center">
+                                              6a49e66a66f75e72e6bd383ac798792af204a6693708912ad0d48e363a2ab7a7
+                                          </td>
+                                      </tr>
+                                      <tr>
+                                          <td class="text-center"><button class="btn
+                                              btn-info btn-sm"><span class="btn-label"><i class="fa
+                                              fa-check"></i></span>Confirmed</button></td>
+                                          <td class="text-center">$21,000</td>
+                                          <td class="text-center">
+                                              8a2b9781aa4995625af7d2b008f020ac74e7e0d2a599e93ed995f7c3bc2be9f2
+                                          </td>
+                                      </tr>
+                                      <tr>
+                                          <td class="text-center"><button class="btn btn-warning btn-sm"><span class="btn-label"><i class="fa fa-warning"></i></span>Pending</button></td>
+                                          <td class="text-center">$6,000</td>
+                                          <td class="text-center">
+                                              797ba039291417fdbdb411ea0a102d23090cde9ac7799ff605f40b5db484891d
+                                          </td>
+                                      </tr>
+                                      <tr>
+                                          <td class="text-center"><button class="btn
+                                              btn-info btn-sm"><span class="btn-label"><i class="fa
+                                              fa-check"></i></span>Confirmed</button></td>
+                                          <td class="text-center">$9,000</td>
+                                          <td class="text-center">
+                                              f0b66ce7a33bbc63bf50050beaf52be71709c359aa1d344bb90f943690485661
+                                          </td>
+                                      </tr>
+                                      <tr>
+                                          <td class="text-center"><button class="btn
+                                              btn-info btn-sm"><span class="btn-label"><i class="fa
+                                              fa-check"></i></span>Confirmed</button></td>
+                                          <td class="text-center">$23,000</td>
+                                          <td class="text-center">
+                                              2083e95ada3c584471ba5982e16c5dc2a6e464d3c170555ea8c708668be9383b
+                                          </td>
+                                      </tr>
+                                      <tr>
+                                          <td class="text-center"><button class="btn
+                                              btn-info btn-sm"><span class="btn-label"><i class="fa
+                                              fa-check"></i></span>Confirmed</button></td>
+                                          <td class="text-center">$51,000</td>
+                                          <td class="text-center">
+                                              8a2b9781aa4995625af7d2b008f020ac74e7e0d2a599e93ed995f7c3bc2be9f2
+                                          </td>
+                                      </tr>
+                                      <tr>
+                                          <td class="text-center"><button class="btn
+                                              btn-info btn-sm"><span class="btn-label"><i class="fa
+                                              fa-check"></i></span>Confirmed</button></td>
+                                          <td class="text-center">$5,000</td>
+                                          <td class="text-center">
+                                              8a2b9781aa4995625af7d2b008f020ac74e7e0d2a599e93ed995f7c3bc2be9f2
+                                          </td>
+                                      </tr>
+                                      <tr>
+                                          <td class="text-center"><button class="btn
+                                              btn-info btn-sm"><span class="btn-label"><i class="fa
+                                              fa-check"></i></span>Confirmed</button></td>
+                                          <td class="text-center">5,000</td>
+                                          <td class="text-center">
+                                              15c3a97edbd606bd1e455aa2875677f5c6cd2b804e9054e898f640d313e39781
+                                          </td>
+                                      </tr>
+                                      <tr>
+                                          <td class="text-center"><button class="btn btn-warning btn-sm"><span class="btn-label"><i class="fa fa-warning"></i></span>Pending</button></td>
+                                          <td class="text-center">$18,000</td>
+                                          <td class="text-center">
+                                              66c13496e9d53a2402fd49bbe91df298164472679cc868bbfebbabb4844d784c
+                                          </td>
+                                      </tr>
+                                      <tr>
+                                          <td class="text-center"><button class="btn
+                                              btn-info btn-sm"><span class="btn-label"><i class="fa
+                                              fa-check"></i></span>Confirmed</button></td>
+                                          <td class="text-center">$2,500</td>
+                                          <td class="text-center">
+                                              ce972a6b82135fcba0890ea0c8668bdddf782fd580672daa6616c3b1af40ca9f
+                                          </td>
+                                      </tr>
+                                      <tr>
+                                          <td class="text-center"><button class="btn
+                                              btn-info btn-sm"><span class="btn-label"><i class="fa
+                                              fa-check"></i></span>Confirmed</button></td>
+                                          <td class="text-center">$9,000</td>
+                                          <td class="text-center">
+                                              376e809b02e6ef044f6d5cf5b72111f25f3c3e16a93dce865a178e2e0f5c484c
+                                          </td>
+                                      </tr>
+                                      <tr>
+                                          <td class="text-center"><button class="btn btn-warning btn-sm"><span class="btn-label"><i class="fa fa-warning"></i></span>Pending</button></td>
+                                          <td class="text-center">$43,000</td>
+                                          <td class="text-center">
+                                              aa14458f8082d9c4265ef491ca0b5d4801c16bbf7a4aece7b70a0b4824ffdfea
+                                          </td>
+                                      </tr>
+                                      <tr>
+                                          <td class="text-center"><button class="btn
+                                              btn-info btn-sm"><span class="btn-label"><i class="fa
+                                              fa-check"></i></span>Confirmed</button></td>
+                                          <td class="text-center">$10,000.00</td>
+                                          <td class="text-center">
+                                              3a17c5984af22cd7a443f14457841b3b19a51ea75a30e18bc6a82e4f8732dbca
+                                          </td>
+                                      </tr>
+                                      <tr>
+                                          <td class="text-center"><button class="btn btn-warning btn-sm"><span class="btn-label"><i class="fa fa-warning"></i></span>Pending</button></td>
+                                          <td class="text-center">$51,000.00</td>
+                                          <td class="text-center">
+                                              8a2b9781aa4995625af7d2b008f020ac74e7e0d2a599e93ed995f7c3bc2be9f2
+                                          </td>
+                                      </tr>
+                                      <tr>
+                                          <td class="text-center"><button class="btn
+                                              btn-info btn-sm"><span class="btn-label"><i class="fa
+                                              fa-check"></i></span>Confirmed</button></td>
+                                          <td class="text-center">$24,100.00</td>
+                                          <td class="text-center">
+                                              f007e92cc9f82ba9c8c40c481eec7315fa9abcd85e7249a6cb57e38a2cf22d3e
+                                          </td>
+                                      </tr>
+                                      <tr>
+                                          <td class="text-center"><button class="btn btn-info btn-sm"><span class="btn-label"><i class="fa
+                                              fa-check"></i></span>Confirmed</button></td>
+                                          <td class="text-center">$4,000.00</td>
+                                          <td class="text-center">
+                                              8a2b9781aa4995625af7d2b008f020ac74e7e0d2a599e93ed995f7c3bc2be9f2
+                                          </td>
+                                      </tr>
+                                      <tr>
+                                          <td class="text-center"><button class="btn
+                                              btn-info btn-sm"><span class="btn-label"><i class="fa
+                                              fa-check"></i></span>Confirmed</button></td>
+                                          <td class="text-center">$500</td>
+                                          <td class="text-center">
+                                              00db85ef40da34f3ea76aa60f0b2053eec2d90121e450791c18d8edbfedde6f1
+                                          </td>
+                                      </tr>
+                                      <tr>
+                                          <td class="text-center"><button class="btn
+                                              btn-info btn-sm"><span class="btn-label"><i class="fa
+                                              fa-check"></i></span>Confirmed</button></td>
+                                          <td class="text-center">$240,000</td>
+                                          <td class="text-center">
+                                              b21a418a44ed8b56118facefe7aa8d26541dff811b8a8ca65cfa1346d62c5c48
+                                          </td>
+                                      </tr>
+                                      <tr>
+                                          <td class="text-center"><button class="btn
+                                              btn-info btn-sm"><span class="btn-label"><i class="fa
+                                              fa-check"></i></span>Confirmed</button></td>
+                                          <td class="text-center">$17,000</td>
+                                          <td class="text-center">
+                                              1e652d2899a1d058a20041a9faaeb5dc009101ca412ff09c387e6b281bd1db8b
+                                          </td>
+                                      </tr>
+                                      <tr>
+                                          <td class="text-center"><button class="btn btn-warning btn-sm"><span class="btn-label"><i class="fa fa-warning"></i></span>Pending</button></td>
+                                          <td class="text-center">$51,000</td>
+                                          <td class="text-center">
+                                              6a49e66a66f75e72e6bd383ac798792af204a6693708912ad0d48e363a2ab7a7
+                                          </td>
+                                      </tr>
+                                      <tr>
+                                          <td class="text-center"><button class="btn
+                                              btn-info btn-sm"><span class="btn-label"><i class="fa
+                                              fa-check"></i></span>Confirmed</button></td>
+                                          <td class="text-center">$21,000</td>
+                                          <td class="text-center">
+                                              8a2b9781aa4995625af7d2b008f020ac74e7e0d2a599e93ed995f7c3bc2be9f2
+                                          </td>
+                                      </tr>
+                                      <tr>
+                                          <td class="text-center"><button class="btn btn-warning btn-sm"><span class="btn-label"><i class="fa fa-warning"></i></span>Pending</button></td>
+                                          <td class="text-center">$6,000</td>
+                                          <td class="text-center">
+                                              797ba039291417fdbdb411ea0a102d23090cde9ac7799ff605f40b5db484891d
+                                          </td>
+                                      </tr>
+                                      <tr>
+                                          <td class="text-center"><button class="btn
+                                              btn-info btn-sm"><span class="btn-label"><i class="fa
+                                              fa-check"></i></span>Confirmed</button></td>
+                                          <td class="text-center">$9,000</td>
+                                          <td class="text-center">
+                                              f0b66ce7a33bbc63bf50050beaf52be71709c359aa1d344bb90f943690485661
+                                          </td>
+                                      </tr>
+                                      <tr>
+                                          <td class="text-center"><button class="btn
+                                              btn-info btn-sm"><span class="btn-label"><i class="fa
+                                              fa-check"></i></span>Confirmed</button></td>
+                                          <td class="text-center">$23,000</td>
+                                          <td class="text-center">
+                                              2083e95ada3c584471ba5982e16c5dc2a6e464d3c170555ea8c708668be9383b
+                                          </td>
+                                      </tr>
+                                      <tr>
+                                          <td class="text-center"><button class="btn
+                                              btn-info btn-sm"><span class="btn-label"><i class="fa
+                                              fa-check"></i></span>Confirmed</button></td>
+                                          <td class="text-center">$51,000</td>
+                                          <td class="text-center">
+                                              8a2b9781aa4995625af7d2b008f020ac74e7e0d2a599e93ed995f7c3bc2be9f2
+                                          </td>
+                                      </tr>
+                                      <tr>
+                                          <td class="text-center"><button class="btn
+                                              btn-info btn-sm"><span class="btn-label"><i class="fa
+                                              fa-check"></i></span>Confirmed</button></td>
+                                          <td class="text-center">$5,000</td>
+                                          <td class="text-center">
+                                              8a2b9781aa4995625af7d2b008f020ac74e7e0d2a599e93ed995f7c3bc2be9f2
+                                          </td>
+                                      </tr>
+                                      <tr>
+                                          <td class="text-center"><button class="btn
+                                              btn-info btn-sm"><span class="btn-label"><i class="fa
+                                              fa-check"></i></span>Confirmed</button></td>
+                                          <td class="text-center">5,000</td>
+                                          <td class="text-center">
+                                              15c3a97edbd606bd1e455aa2875677f5c6cd2b804e9054e898f640d313e39781
+                                          </td>
+                                      </tr>
+                                      <tr>
+                                          <td class="text-center"><button class="btn btn-warning btn-sm"><span class="btn-label"><i class="fa fa-warning"></i></span>Pending</button></td>
+                                          <td class="text-center">$18,000</td>
+                                          <td class="text-center">
+                                              66c13496e9d53a2402fd49bbe91df298164472679cc868bbfebbabb4844d784c
+                                          </td>
+                                      </tr>
+                                      <tr>
+                                          <td class="text-center"><button class="btn
+                                              btn-info btn-sm"><span class="btn-label"><i class="fa
+                                              fa-check"></i></span>Confirmed</button></td>
+                                          <td class="text-center">$2,500</td>
+                                          <td class="text-center">
+                                              ce972a6b82135fcba0890ea0c8668bdddf782fd580672daa6616c3b1af40ca9f
+                                          </td>
+                                      </tr>
+                                      <tr>
+                                          <td class="text-center"><button class="btn
+                                              btn-info btn-sm"><span class="btn-label"><i class="fa
+                                              fa-check"></i></span>Confirmed</button></td>
+                                          <td class="text-center">$9,000</td>
+                                          <td class="text-center">
+                                              376e809b02e6ef044f6d5cf5b72111f25f3c3e16a93dce865a178e2e0f5c484c
+                                          </td>
+                                      </tr>
+                                      <tr>
+                                          <td class="text-center"><button class="btn btn-warning btn-sm"><span class="btn-label"><i class="fa fa-warning"></i></span>Pending</button></td>
+                                          <td class="text-center">$43,000</td>
+                                          <td class="text-center">
+                                              aa14458f8082d9c4265ef491ca0b5d4801c16bbf7a4aece7b70a0b4824ffdfea
+                                          </td>
+                                      </tr>
+                                  </tbody>
+                              </table></marquee>
+                      </div>
+                  </div>
+              </div>		    
+              
+  
+              
+          </div>
+  
+  
+  
+      </div>
+  </div>
+  
+  
+  
+  
+  
+  
+  <style>
+  * {
+    box-sizing: border-box;
+  }
+  
+  .columns {
+    float: left;
+    width: 33.3%;
+    padding: 8px;
+  }
+  
+  .price {
+    list-style-type: none;
+    border: 1px solid #ccc;
+    margin: 0;
+    padding: 0;
+    -webkit-transition: 0.3s;
+    transition: 0.3s;
+  }
+  
+  .price:hover {
+    box-shadow: 0 8px 12px 0 rgba(0,0,0,0.2)
+  }
+  
+  .price .header {
+    background-color: #111;
+    color: white;
+    font-size: 25px;
+  }
+  
+  .price li {
+    border-bottom: 1px solid #eee;
+    padding: 20px;
+    text-align: center;
+    border: 1px solid #ccc;
+  }
+  
+  .price .grey {
+    background-color: #eee;
+    font-size: 20px;
+  }
+  
+  .button {
+    background-color: #AC2F3C;
+    border: none;
+    color: white;
+    padding: 10px 25px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 18px;
+  }
+  
+  @media    only screen and (max-width: 600px) {
+    .columns {
+      width: 100%;
+    }
+  }
+  </style>
+  
+  
+  
+  
+  <div class="container my-5">
+      <div class="section_title text-center mb-5">
+          <h2 class="wow slideInUp" data-wow-duration="1s" style="visibility: visible; animation-duration: 1s; animation-name: slideInUp;"><span class="text-primary">INVESTMEN<span lang="en-gb">T&nbsp; 
+          PLANS</span></span></h2>
+      </div>
+      <div class="row">
+  
+          <div class="col-lg-12">
+  
+          
+      
+  
+       <section class="clearfix">
+  
+   
+                      <h2 style="text-align:center"></h2>
+  <div class="row mb-5 pl-5 pr-5">
+         <div class="col-md-3">
+          <ul class="price">
+              <li class="header"> STARTER ACCOUNT</li>
+              <li class="black"><span style="background-color:rgb(196, 0, 0); color:#fff; border-radius:30%;"> $250</span></li>
+              <li>ROI : 720%</li>
+              <li>Trading alerts</li>
+              <li class="grey"><a href="/register" class="button">Sign Up</a></li>
+            </ul>
+      </div>
+          <div class="col-md-3">
+          <ul class="price">
+              <li class="header"> CLASSIC ACCOUNT</li>
+              <li class="black"><span style="background-color:rgb(196, 0, 0); color:#fff; border-radius:30%;"> $5,000</span></li>
+              <li>ROI : 5400%</li>
+              <li>Trading alert73</li>
+              <li class="grey"><a href="/register" class="button">Sign Up</a></li>
+            </ul>
+      </div>
+          <div class="col-md-3">
+          <ul class="price">
+              <li class="header">VARIETY</li>
+              <li class="black"><span style="background-color:rgb(196, 0, 0); color:#fff; border-radius:30%;"> $10,000</span></li>
+              <li>ROI : 8000%</li>
+              <li>Trading alerts</li>
+              <li class="grey"><a href="/register" class="button">Sign Up</a></li>
+            </ul>
+      </div>
+          <div class="col-md-3">
+          <ul class="price">
+              <li class="header">FIXED ACCOUNT</li>
+              <li class="black"><span style="background-color:rgb(196, 0, 0); color:#fff; border-radius:30%;"> $20,000</span></li>
+              <li>ROI : 16000%</li>
+              <li>Trading alerts</li>
+              <li class="grey"><a href="/register" class="button">Sign Up</a></li>
+            </ul>
+      </div>
+          <div class="col-md-3">
+          <ul class="price">
+              <li class="header">SUPERIOR</li>
+              <li class="black"><span style="background-color:rgb(196, 0, 0); color:#fff; border-radius:30%;"> $30,000</span></li>
+              <li>ROI : 24000%</li>
+              <li>Trading alerts</li>
+              <li class="grey"><a href="/register" class="button">Sign Up</a></li>
+            </ul>
+      </div>
+         <div class="col-md-3">
+          <ul class="price">
+              <li class="header">VIP AMATUER</li>
+              <li class="black"><span style="background-color:rgb(196, 0, 0); color:#fff; border-radius:30%;"> $40,000</span></li>
+              <li>ROI : 32000%</li>
+              <li>Trading alerts</li>
+              <li class="grey"><a href="/register" class="button">Sign Up</a></li>
+            </ul>
+      </div>
+   
+       <div class="col-md-3">
+          <ul class="price">
+              <li class="header">PROFESSIONAL ACCOUNT</li>
+              <li class="black"><span style="background-color:rgb(196, 0, 0); color:#fff; border-radius:30%;"> $50,000</span></li>
+              <li>ROI : 40000%</li>
+              <li>Trading alerts</li>
+              <li class="grey"><a href="/register" class="button">Sign Up</a></li>
+            </ul>
+      </div>
+   <div class="col-md-3">
+          <ul class="price">
+              <li class="header">PLATINUM</li>
+              <li class="black"><span style="background-color:rgb(196, 0, 0); color:#fff; border-radius:30%;"> $60,000</span></li>
+              <li>ROI : 48000%</li>
+              <li>Trading alerts</li>
+              <li class="grey"><a href="/register" class="button">Sign Up</a></li>
+            </ul>
+      </div>
+  
+  </div>
+  
+  
+  </section>
+  
+          
+          
+          
+              
+          </div>
+  
+  
+      
+      </div>
+  </div>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <section class="bg-pattern">
+      <div class="container py-5">
+          <div class="section_title text-center mb-5">
+              <h2 class="wow slideInUp text-white" data-wow-duration="1s" style="visibility: visible; animation-duration: 1s; animation-name: slideInUp;">Crypto <span class="text-primary">Market</span></h2>
+              <h2 class="wow slideInUp text-white" style="visibility: visible; animation-name: slideInUp;">Buy &amp; Sell Crypto in minutes.</h2>
+                              <p class="wow slideInUp text-white" style="visibility: visible; animation-name: slideInUp;">Join our fast-growing crypto exchange for positive results!</p>
+          </div>
+                   <div style="height:433px; background-color: #1D2330; overflow:hidden; box-sizing: border-box; border: 1px solid #282E3B; border-radius: 4px; text-align: right; line-height:14px; font-size: 12px; font-feature-settings: normal; text-size-adjust: 100%; box-shadow: inset 0 -20px 0 0 #262B38; padding: 0px; margin: 0px; width: 100%;"><div style="height:413px; padding:0px; margin:0px; width: 100%;"><iframe src="https://widget.coinlib.io/widget?type=full_v2&amp;theme=dark&amp;cnt=15&amp;pref_coin_id=1505&amp;graph=yes" width="100%" height="100%" scrolling="auto" marginwidth="0" marginheight="0" frameborder="0" border="0" style="border:0;margin:0;padding:0;"></iframe></div><div style="color: #626B7F; line-height: 14px; font-weight: 400; font-size: 11px; box-sizing: border-box; padding: 2px 6px; width: 100%; font-family: Verdana, Tahoma, Arial, sans-serif;"></div>
+                      </div>
+      </div>
+  </section>
+  <section class="why_area py-5">
+      <div class="container py-5">
+          <div class="row justify-content-end">
+              <div class="col-md-6">
+                  <h1 class="mb-4 wow slideInRight" style="visibility: visible; animation-name: slideInRight;">Why <span class="text-primary">Choose</span> Us</h1>
+                  <p class="wow slideInLeft" data-wow-duration="1s" style="visibility: visible; animation-duration: 1s; animation-name: slideInLeft;">Maxtrades-exchange strives to be worthy of our client's trust by providing them with services which are economically beneficial to them and to create awareness regarding reliable and highly profitable investment platform among our clients around the globe. All you need to do is sit back and enjoy how your profit grows based on your investment.</p>
+                  <div class="row">
+                      <div class="col-6">
+                          <ul>
+                              <li class="wow slideInLeft" style="visibility: visible; animation-name: slideInLeft;">Professional team</li>
+                              <li class="wow slideInRight" style="visibility: visible; animation-name: slideInRight;">Instant payments</li>
+                              <li class="wow slideInLeft" style="visibility: visible; animation-name: slideInLeft;">24/7 live support</li>
+                              <li class="wow slideInRight" style="visibility: visible; animation-name: slideInRight;">Great referral system</li>
+                          </ul>
+                      </div>
+                      <div class="col-6">
+                          <ul>
+                              <li class="wow slideInLeft" style="visibility: visible; animation-name: slideInLeft;">Account security</li>
+                              <li class="wow slideInRight" style="visibility: visible; animation-name: slideInRight;">Global access</li>
+                              <li class="wow slideInLeft" style="visibility: visible; animation-name: slideInLeft;">Profitable plans</li>
+                              <li class="wow slideInRight" style="visibility: visible; animation-name: slideInRight;">No investment contracts</li>
+                          </ul>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </section>
+  
+  <div class="container">
+      <div class="row about_info">
+          <div class="col-lg-4">
+              <div class="media about_item wow slideInLeft" data-wow-duration="1s" style="visibility: visible; animation-duration: 1s; animation-name: slideInLeft;">
+                  <i class="flaticon-arrows"></i>
+                  <div class="media-body">
+                      <h3 class="mb_0">Forex</h3>
+                      <p class="mb_0">Explore and trade CFDs on major, minor, and exotic currency pairs with efficient spreads.</p>
+                  </div>
+              </div>
+          </div>
+          <div class="col-lg-4">
+              <div class="media about_item wow slideInUp" data-wow-duration="1s" style="visibility: visible; animation-duration: 1s; animation-name: slideInUp;">
+                  <i class="flaticon-money-7"></i>
+                  <div class="media-body">
+                      <h3 class="mb_0">CFD STOCK</h3>
+                      <p class="mb_0">Trade CFDs on stocks of leading companies and industry giants without actually owning them</p>
+                  </div>
+              </div>
+          </div>
+          <div class="col-lg-4">
+              <div class="media about_item wow slideInRight" data-wow-duration="1s" style="visibility: visible; animation-duration: 1s; animation-name: slideInRight;">
+                  <i class="flaticon-technology"></i>
+                  <div class="media-body">
+                      <h3 class="mb_0">Indices</h3>
+                      <p class="mb_0">Select from a list of CFDs on widely traded indices representing a particular market sector or national economy.</p>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+  <section class="currency_converter_area bg-pattern">
+      <div class="converter_left">
+          <img src="asset/temp/custom1/images/tradehand.jpg" alt="">
+      </div>
+      <div class="">
+          <div class="converter_info">
+              <div class="section_title mb_60">
+                  <h2 class="wow slideInLeft" data-wow-duration="1s" style="visibility: visible; animation-duration: 1s; animation-name: slideInLeft;">Crypto <span class="text-primary">Watch</span> World</h2>
+                  
+                  <span class="bottom_line w_50"></span>
+                  
+                   <iframe width="100%" height="315" src="https://www.youtube.com/embed/tZOSQBP946Q" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+              </div>
+            
+      </div>
+  </div></section>
+  
+  
+  
+  
+  
+  
+   <!--================ testimonial Area =================-->
+          <section class="testimonial_area">
+              <div class="container">
+                  <div class="section_title sec_c_white text-center mb_60">
+                      <h2 class="mb_0">What our customers says</h2>
+                      <p class="mb_0">Thousands of people get benefit</p>
+                      <span class="bottom_line w_50"></span>
+                  </div>
+                  <div class="testimonial_slider owl-carousel">
+                      <div class="testimonial_item">
+                          <div class="media">
+                              <div class="media-left">
+                                  <img class="clients_img" src="asset/testimony_feb308d719612cc72fe955106499bf8d.jpg" alt="clients" height="85" width="94">
+                                  <div class="quote">
+                                      <img src="asset/temp/custom1/image/new/quote.png" alt="quote">
+                                  </div>
+                              </div>
+                              <div class="media-body">
+                                  <h4>Kennedy Kyle</h4>
+                                  <p>I and my friends have been making it big with Maxtrades-exchange they have very advanced trading software which they using in trading and their traders are very skilled and experienced I earn up to 
+                                  <span lang="en-gb">3</span>7,000$ and more</p>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="testimonial_item">
+                          <div class="media">
+                              <div class="media-left">
+                                  <img class="clients_img" src="asset/temp/custom1/image/new/8.jpg" alt="clients">
+                                  <div class="quote">
+                                      <img src="asset/temp/custom1/image/new/quote.png" alt="quote">
+                                  </div>
+                              </div>
+                              <div class="media-body">
+                                  <h4>&nbsp;William</h4>
+                                  <p>Maxtrades-exchange  is the best platform I have worked with,they make good returns and guaranteed investment with them I have made a lot of profit I cant stop smiling they never stop to amaze me with their undeniable great works</p>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="testimonial_item">
+                          <div class="media">
+                              <div class="media-left">
+                                  <img class="clients_img" src="asset/temp/custom1/image/new/7.jpg" alt="clients">
+                                  <div class="quote">
+                                      <img src="asset/temp/custom1/image/new/quote.png" alt="quote">
+                                  </div>
+                              </div>
+                              <div class="media-body">
+                                  <h4>John Wayne</h4>
+                                  <p>Maxtrades-exchange works at it’s best in earning for their clients they do as they have said and I'm a testimony of their great deeds this platform has made me beat new height in my life</p>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="testimonial_item">
+                          <div class="media">
+                              <div class="media-left">
+                                  <img class="clients_img" src="asset/temp/custom1/image/new/6.jpg" alt="clients">
+                                  <div class="quote">
+                                      <img src="asset/temp/custom1/image/new/quote.png" alt="quote">
+                                  </div>
+                              </div>
+                              <div class="media-body">
+                                  <h4>Derrick </h4>
+                                  <p>Debt as been a great issue in my life I have lived in stress but I've heard of investment but not knowing the right platform to do it with some promised and failed but here I earn a consistent profit of $45,000 from a 12days investment and I've been able to meet up with my debt now I live very comfortably. Maxtrades-exchange is the best platform ever</p>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="testimonial_item">
+                          <div class="media">
+                              <div class="media-left">
+                                  <img class="clients_img" src="asset/testimony_01ebb63d0f2f584756b159f1f7d9036a.jpg" alt="clients" height="85" width="94">
+                                  <div class="quote">
+                                      <img src="asset/temp/custom1/image/new/quote.png" alt="quote">
+                                  </div>
+                              </div>
+                              <div class="media-body">
+                                  <h4>Lucy Attaway</h4>
+                                  <p>Maxtrades-exchange is the most profitable and guaranteed investment platform I have worked with they haven't failed me in any way I have worked with them for 3months now and have made 6 withdrawal and none has gone below my expectations,I am astound by their great work</p>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="testimonial_item">
+                          <div class="media">
+                              <div class="media-left">
+                                  <img class="clients_img" src="asset/temp/custom1/image/new/4.jpg" alt="clients">
+                                  <div class="quote">
+                                      <img src="asset/temp/custom1/image/new/quote.png" alt="quote">
+                                  </div>
+                              </div>
+                              <div class="media-body">
+                                  <h4>Mary Owen</h4>
+                                  <p>Crypto trade seemed like something fake to me because of the current situation in it’s market,only when I started trading with Maxtrades-exchange I knew the value and gain I earned $18,000 In just 12days how can something this profitable be doubted</p>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="testimonial_item">
+                          <div class="media">
+                              <div class="media-left">
+                                  <img class="clients_img" src="asset/temp/custom1/image/new/1.jpg" alt="clients">
+                                  <div class="quote">
+                                      <img src="asset/temp/custom1/image/new/quote.png" alt="quote">
+                                  </div>
+                              </div>
+                              <div class="media-body">
+                                  <h4>Terry Spencer</h4>
+                                  <p>I have face many backwardness and losses while working with other platform,but since I met my account manager who introduced me to Maxtrades-exchange, making profits off my investment hasn't been a problem</p>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="testimonial_item">
+                          <div class="media">
+                              <div class="media-left">
+                                  <img class="clients_img" src="asset/professional_8d73d1288cfbb6f7a82733b757a431e6.jpg" alt="clients" height="85" width="94">
+                                  <div class="quote">
+                                      <img src="asset/temp/custom1/image/new/quote.png" alt="quote">
+                                  </div>
+                              </div>
+                              <div class="media-body">
+                                  <h4>Micheal Hattaway</h4>
+                                  <p>Being trading with other platforms but I can say Maxtrades-exchange is the best and assured profit margin</p>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="testimonial_item">
+                          <div class="media">
+                              <div class="media-left">
+                                  <img class="clients_img" src="asset/temp/custom1/image/new/2.jpg" alt="clients">
+                                  <div class="quote">
+                                      <img src="asset/temp/custom1/image/new/quote.png" alt="quote">
+                                  </div>
+                              </div>
+                              <div class="media-body">
+                                  <h4>Jack Collins</h4>
+                                  <p>Maxtrades-exchange never disappoint... been earning my profit from day one</p>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="testimonial_item">
+                          <div class="media">
+                              <div class="media-left">
+                                  <img class="clients_img" src="asset/temp/custom1/image/new/testimonial_img2.jpg" alt="clients">
+                                  <div class="quote">
+                                      <img src="asset/temp/custom1/image/new/quote.png" alt="quote">
+                                  </div>
+                              </div>
+                              <div class="media-body">
+                                  <h4>Theresa Williams</h4>
+                                  <p>Maxtrades-exchange has the simplest interface of all and also has the fastest entry point into the market.I was a banker who was deep in debt, but  with the help of Astrofxopts ..., now I am living well and comfortable with my family</p>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="testimonial_item">
+                          <div class="media">
+                              <div class="media-left">
+                                  <img class="clients_img" src="asset/temp/custom1/image/new/testimonial_img.jpg" alt="clients">
+                                  <div class="quote">
+                                      <img src="asset/temp/custom1/image/new/quote.png" alt="quote">
+                                  </div>
+                              </div>
+                              <div class="media-body">
+                                  <h4>William Tyler Pelicione</h4>
+                                  <p>My name is William Tyler Pelicione. Few weeks I have traded with Maxtrades-exchange, i made enough profit of 2.8btc and my withdrawal was processed instantly. Astrofxopts is the best....</p>
+                                  </div>
+                          </div>
+                      </div>
+                     
+                  </div>
+              </div>
+          </section>
+          <!--================ testimonial Area =================-->
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <div class="reasons">
+      <div class="container">
+          <h2 class="text-light mb-5 wow slideInLeft" data-wow-duration="1s" style="visibility: hidden; animation-duration: 1s; animation-name: none;">WHY <span class="text-primary">TRADE</span> WITH US?</h2>
+          <div class="row">
+              <div class="col-lg-3 col-md-6 reason-wrapper">
+                  <div class="reason shine-icon-container wow slideInUp" data-wow-duration="1s" style="visibility: hidden; animation-duration: 1s; animation-name: none;">
+                      <div class="content">
+                          <div class="icon shine-icon yen">
+                              <div class="default">
+                                  <img data-src="asset/images/8-reasons.png" src="asset/temp/custom1/images/8-reasons.png">
+                              </div>
+                              <div class="hover">
+                                  <div class="shine"></div>
+                                  <img data-src="asset/images/8-reasons.png" src="asset/temp/custom1/images/8-reasons.png">
+                              </div>
+                          </div>
+                          <h3 class="heading">Quick funds access</h3>
+                          <p>Withdraw funds quickly and easily using a range of methods, without any hidden terms.</p>
+                      </div>
+                  </div>
+              </div>
+              <div class="col-lg-3 col-md-6 reason-wrapper">
+                  <div class="reason shine-icon-container wow slideInUp" data-wow-duration="1s" style="visibility: hidden; animation-duration: 1s; animation-name: none;">
+                      <div class="content">
+                          <div class="icon shine-icon mobile">
+                              <div class="default">
+                                  <img data-src="asset/images/8-reasons.png" src="asset/temp/custom1/images/8-reasons.png">
+                              </div>
+                              <div class="hover">
+                                  <div class="shine"></div>
+                                  <img data-src="asset/images/8-reasons.png" src="asset/temp/custom1/images/8-reasons.png">
+                              </div>
+                          </div>
+                          <h3 class="heading">Trade on the go</h3>
+                          <p>Trade your way with Maxtrades-exchange ’s web app for mobile and desktop, or with our Android app.</p>
+                      </div>
+                  </div>
+              </div>
+              <div class="col-lg-3 col-md-6 reason-wrapper">
+                  <div class="reason shine-icon-container wow slideInUp" data-wow-duration="1s" style="visibility: hidden; animation-duration: 1s; animation-name: none;">
+                      <div class="content">
+                          <div class="icon shine-icon two-fold">
+                              <div class="default">
+                                  <img data-src="asset/images/8-reasons.png" src="asset/temp/custom1/images/8-reasons.png">
+                              </div>
+                              <div class="hover">
+                                  <div class="shine"></div>
+                                  <img data-src="asset/images/8-reasons.png" src="asset/temp/custom1/images/8-reasons.png">
+                              </div>
+                          </div>
+                          <h3 class="heading">Industry-best payouts</h3>
+                          <p>Maxtrades-exchange offers payouts of up to 200% on your initial investment, quickly and securely.</p>
+                      </div>
+                  </div>
+              </div>
+              <div class="col-lg-3 col-md-6 reason-wrapper">
+                  <div class="reason shine-icon-container wow slideInUp" data-wow-duration="1s" style="visibility: hidden; animation-duration: 1s; animation-name: none;">
+                      <div class="content">
+                          <div class="icon shine-icon safe">
+                              <div class="default">
+                                  <img data-src="asset/images/8-reasons.png" src="asset/temp/custom1/images/8-reasons.png">
+                              </div>
+                              <div class="hover">
+                                  <div class="shine"></div>
+                                  <img data-src="asset/images/8-reasons.png" src="asset/temp/custom1/images/8-reasons.png">
+                              </div>
+                          </div>
+                          <h3 class="heading">Segregated funds</h3>
+                          <p>We do not use your deposits or your unrealised profits to hedge in the underlying market.</p>
+                      </div>
+                  </div>
+              </div>
+          </div>
+          <div class="row">
+              <div class="col-lg-3 col-md-6 reason-wrapper">
+                  <div class="reason shine-icon-container wow slideInUp" data-wow-duration="1s" style="visibility: hidden; animation-duration: 1s; animation-name: none;">
+                      <div class="content">
+                          <div class="icon shine-icon support">
+                              <div class="default">
+                                  <img data-src="asset/images/8-reasons.png" src="asset/temp/custom1/images/8-reasons.png">
+                              </div>
+                              <div class="hover">
+                                  <div class="shine"></div>
+                                  <img data-src="asset/images/8-reasons.png" src="asset/temp/custom1/images/8-reasons.png">
+                              </div>
+                          </div>
+                          <h3 class="heading">Amazing support</h3>
+                          <p>Our highly skilled and dedicated support team are here to help whenever you need it.</p></div>
+                  </div>
+              </div>
+              <div class="col-lg-3 col-md-6 reason-wrapper">
+                  <div class="reason shine-icon-container wow slideInUp" data-wow-duration="1s" style="visibility: hidden; animation-duration: 1s; animation-name: none;">
+                      <div class="content">
+                          <div class="icon shine-icon  aus">
+                              <div class="default">
+                                  <img data-src="asset/images/8-reasons.png" src="asset/temp/custom1/images/8-reasons.png">
+                              </div>
+                              <div class="hover">
+                                  <div class="shine"></div>
+                                  <img data-src="asset/images/8-reasons.png" src="asset/temp/custom1/images/8-reasons.png">
+                              </div>
+                          </div>
+                          <h3 class="heading">Licensed in USA</h3>
+                          <p>Maxtrades-exchange holds an AFS licence, issued by the USA Securities &amp; Investments Commission.  </p>
+                      </div>
+                  </div>
+              </div>
+              <div class="col-lg-3 col-md-6 reason-wrapper">
+                  <div class="reason shine-icon-container wow slideInUp" data-wow-duration="1s" style="visibility: hidden; animation-duration: 1s; animation-name: none;">
+                      <div class="content">
+                          <div class="icon shine-icon  five-k cashback-idr">
+                              <div class="default">
+                                  <img data-src="asset/images/8-reasons.png" src="asset/temp/custom1/images/8-reasons.png">
+                              </div>
+                              <div class="hover">
+                                  <div class="shine">
+                                  </div>
+                                  <img data-src="asset/images/8-reasons.png" src="asset/temp/custom1/images/8-reasons.png">
+                              </div>
+                          </div>
+                          <h3 class="heading">Cashback for new accounts</h3>
+                          <p>Capitalise without spending your money with a cashback of $50 for all approved accounts. </p> 
+                      </div>
+                  </div>
+              </div>
+              <div class="col-lg-3 col-md-6 reason-wrapper">
+                  <div class="reason shine-icon-container wow slideInUp" data-wow-duration="1s" style="visibility: hidden; animation-duration: 1s; animation-name: none;">
+                      <div class="content">
+                          <div class="icon shine-icon  expert">
+                              <div class="default">
+                                  <img data-src="asset/images/8-reasons.png" src="asset/temp/custom1/images/8-reasons.png">
+                              </div>
+                              <div class="hover">
+                                  <div class="shine">
+                                  </div>
+                                  <img data-src="asset/images/8-reasons.png" src="asset/temp/custom1/images/8-reasons.png">
+                              </div>
+                          </div>
+                          <h3 class="heading">Options specialists</h3>
+                          <p>With many years of experience behind us, no one understands options like Maxtrades-exchange .</p>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+          <div align="center">
+         <!-- TradingView Widget BEGIN -->
+  <div class="tradingview-widget-container">
+    <div class="tradingview-widget-container__widget"></div>
+    <script type="text/javascript" src="../asset/s3.tradingview.com/external-embedding/embed-widget-tickers.js" async="">
+    {
+    "symbols": [
+      {
+        "proName": "BITSTAMP:BTCUSD",
+        "title": "BTC/USD"
+      },
+      {
+        "proName": "BITSTAMP:ETHUSD",
+        "title": "ETH/USD"
+      },
+      {
+        "description": "BNB/USDT",
+        "proName": "BINANCE:BNBUSDT"
+      },
+      {
+        "proName": "KRAKEN:ADAUSD",
+        "title": "ADA/USD"
+      },
+      {
+        "proName": "CURRENCYCOM:XRPUSD",
+        "title": "XRP/USD"
+      }
+    ],
+    "colorTheme": "dark",
+    "isTransparent": false,
+    "showSymbolLogo": true,
+    "locale": "en"
+  }
+    </script>
+  </div>
+  <!-- TradingView Widget END -->
+          </div>
+  
+  <script src="asset/temp/custom1/slick/slick.js" type="text/javascript" charset="utf-8"></script>
+  <script src="asset/temp/custom1/slick/slick-animation.min.js" type="text/javascript" charset="utf-8"></script>
+  <script type="text/javascript">
+      // Init slick slider + animation
+      $(document).ready(function(){
+  
+    $(".testimonials").slick({
+      autoplay:true,
+      autoplaySpeed:10000,
+      speed:600,
+      slidesToShow:1,
+      slidesToScroll:1,
+      pauseOnHover:false,
+      dots:false,
+      arrows: false,
+      adaptiveHeight: true
+    });
+    
+  })
+  </script>
+  <script src="asset/temp/custom1/js/jquery-modal-video.min.js"></script>
+  <link rel="stylesheet" href="asset/temp/custom1/css/modal-video.min.css">
+  <!-- <script>
+      $(".js-video-button").modalVideo();
+  </script> -->
+  <a href="/index" id="back-to-top" class="back-to-top fa fa-arrow-up show-back-to-top" style="display: inline;"></a>
+  <script>
+  /*--window Scroll functions--*/
+  $(window).on('scroll', function () {
+      /*--show and hide scroll to top --*/
+      var ScrollTop = $('#back-to-top');
+      if ($(window).scrollTop() > 500) {
+          ScrollTop.fadeIn(1000);
+      } else {
+          ScrollTop.fadeOut(1000);
+      }
+  });
+  </script>
+  
+  <!-- Start of HubSpot Embed Code -->
+    <!-- <script type="text/javascript" id="hs-script-loader" async="" defer="" src="asset/temp/custom1/js.hs-scripts.com/8821530.html"></script> -->
+  <!-- End of HubSpot Embed Code -->
+  
+  
+  
+  
+  
+  <!-- Start of HubSpot Embed Code -->
+  <!-- <script type="text/javascript" id="hs-script-loader" async="" defer="" src="asset/temp/custom1/js.hs-scripts.com/8821530.html"></script> -->
+  <!-- End of HubSpot Embed Code -->
+  
+
+
+
+<%- include('partials/_footer'); -%>

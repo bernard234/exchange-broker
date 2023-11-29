@@ -1,0 +1,315 @@
+<%- include('partials/dashboardHeader')%>
+
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper" style="min-height: 798.781px;">
+    <!-- Content Header (Page header) -->
+		<section class="content-header">
+      <div class="container-fluid">
+        <div class="row mb-2">
+          <div class="col-sm-6">
+            <h1>Dashboard</h1>
+          </div>
+          <div class="col-sm-6">
+            <ol class="breadcrumb float-sm-right">
+              <li class="breadcrumb-item"><a href="/dashboard">Home</a></li>
+              <li class="breadcrumb-item active">Dashboard</li>
+            </ol>
+          </div>
+        </div>
+      </div><!-- /.container-fluid -->
+    </section>
+
+    <!-- Main content -->
+    <section class="content">
+      <div class="container-fluid">
+      <!-- Small boxes (Stat box) -->
+      
+
+  
+
+  
+      <div class="row">
+		<!--============================ View for Non-Admin ============================-->
+
+                          <div class="col-12 col-sm-12 col-md-12">
+                    <div class="card bg-danger  show" role="alert">
+                        <div class="card-body">
+                            <h4><%=user.verifiedStatus%></h4>
+                            <p>Document verification is required to complete registration click
+                                <a href="/verify">here</a> to upload document
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                    
+          <div class="col-lg-12 col-xs-11 p-0 mb-3">
+                <div class="card bg-white p-0">
+                  <div class="card-header bg-white">
+                  BTC/USD Chart
+                </div>
+                <div class="card-body p-0">
+                  <!-- TradingView Widget BEGIN -->
+                  <div class="tradingview-widget-container">
+                    <div id="tradingview_e8bea"><div id="tradingview_6130c-wrapper" style="position: relative;box-sizing: content-box;width: 100%;height: 500px;margin: 0 auto !important;padding: 0 !important;font-family:Arial,sans-serif;"><div style="width: 100%;height: 500px;background: transparent;padding: 0 !important;"><iframe id="tradingview_6130c" src="https://s.tradingview.com/widgetembed/?frameElementId=tradingview_6130c&amp;symbol=COINBASE%3ABTCUSD&amp;interval=D&amp;hidesidetoolbar=0&amp;symboledit=1&amp;saveimage=1&amp;toolbarbg=f1f3f6&amp;studies=%5B%5D&amp;theme=dark&amp;style=1&amp;timezone=Etc%2FUTC&amp;withdateranges=1&amp;showpopupbutton=1&amp;studies_overrides=%7B%7D&amp;overrides=%7B%7D&amp;enabled_features=%5B%5D&amp;disabled_features=%5B%5D&amp;showpopupbutton=1&amp;locale=en&amp;utm_source=marketindex-exchange.com&amp;utm_medium=widget&amp;utm_campaign=chart&amp;utm_term=COINBASE%3ABTCUSD" style="width: 100%; height: 100%; margin: 0 !important; padding: 0 !important;" frameborder="0" allowtransparency="true" scrolling="no" allowfullscreen=""></iframe></div></div></div>
+                    <script type="text/javascript">
+                    new TradingView.widget(
+                      {
+                        "height":500,
+                        "width":"100%",
+                        "symbol": "COINBASE:BTCUSD",
+                        "interval": "D",
+                        "timezone": "Etc/UTC",
+                        "theme": "dark",
+                        "style": "1",
+                        "locale": "en",
+                        "toolbar_bg": "#f1f3f6",
+                        "withdateranges": true,
+                        "hide_side_toolbar": false,
+                        "allow_symbol_change": true,
+                        "show_popup_button": true,
+                        "popup_width": "1000",
+                        "popup_height": "650",
+                        "container_id": "tradingview_e8bea"
+                      }
+                    );
+                    </script>
+                  </div>
+                  <!-- TradingView Widget END -->
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-6 col-sm-3 col-md-6 ">
+            <div class="info-box shadow p-1 bg-dark">
+              
+              <div class="info-box-content">
+                <small class="info-box-text text-bold">BALANCE</small>
+                <small class="info-box-text">
+                  <%=user.available%>       
+                      </small>   
+              </div>
+              <!-- /.info-box-content -->
+            </div>
+            <!-- /.info-box -->
+          </div>
+          <div class="col-6 col-sm-3 col-md-6 ">
+            <div class="info-box shadow p-1 bg-dark">
+              
+              <div class="info-box-content">
+                <small class="info-box-text text-bold">PROFIT RETURN</small>
+                <small class="info-box-text">
+                    <span id="profit-return"><%=user.profit%></span>
+                </small>    
+              </div>
+              <!-- /.info-box-content -->
+            </div>
+            <!-- /.info-box -->
+          </div>
+          <!-- /.col -->
+          <div class="col-6 col-sm-3 col-md-6">
+            <div class="info-box shadow p-1 bg-dark">
+              <div class="info-box-content">
+                <small class="info-box-text text-bold">BONUS</small>
+                <small class="info-box-text">
+                    <%=user.bonus%>      
+                              </small>
+               
+              </div>
+              <!-- /.info-box-content -->
+            </div>
+            <!-- /.info-box -->
+          </div>
+          <div class="col-6 col-sm-3 col-md-6 ">
+            <div class="info-box shadow p-1 bg-dark">
+              <div class="info-box-content">
+                <small class="info-box-text text-bold">TOTAL DEPOSIT</small>
+                <small class="info-box-text">
+                      <%=user.balance%>            </small>
+               
+              </div>
+              <!-- /.info-box-content -->
+            </div>
+            <!-- /.info-box -->
+          </div>
+          <div class="col-6 col-sm-3 col-md-6 ">
+            <div class="info-box shadow p-1 bg-dark">
+              <div class="info-box-content">
+                <small class="info-box-text text-bold">TOTAL WITHDRAWAL</small>
+                <small class="info-box-text">
+                    <%=user.widthdrawBalance%>      
+                              </small>
+               
+              </div>
+              <!-- /.info-box-content -->
+            </div>
+            <!-- /.info-box -->
+          </div>
+         
+          <div class="col-6 col-sm-3 col-md-6 d-none d-md-block ">
+            <div class="info-box shadow p-3 bg-dark">
+              <a href="#" class="d-none d-md-block info-box-icon bg-dark  elevation-1" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="See Deposits"><i class="fa fa-exchange"></i></a>
+
+              <div class="info-box-content">
+                <span class="info-box-text">Deposits</span>
+                <span class="info-box-number lead">
+                        <%=user.totalDeposit%>         </span>
+              </div>
+              <!-- /.info-box-content -->
+            </div>
+            <!-- /.info-box -->
+          </div>
+          <!-- /.col -->
+
+          <!-- fix for small devices only -->
+          <div class="clearfix hidden-md-up"></div>
+
+          <div class="col-6 col-sm-3 col-md-6 d-none d-md-block ">
+            <div class="info-box shadow p-3  bg-dark">
+              <a href="#" class=" d-none d-md-block info-box-icon bg-dark elevation-1" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="See Withdrawal"><i class="fa fa-exchange"></i></a>
+
+              <div class="info-box-content">
+                <span class="info-box-text">Withdrawals</span>
+                <span class="info-box-number lead">
+                  <%=user.totalWidthdraw%>             </span>
+              </div>
+              <!-- /.info-box-content -->
+            </div>
+            <!-- /.info-box -->
+          </div>
+            <div class="col-6 col-sm-3 col-md-6 ">
+            <div class="info-box shadow p-3 bg-dark">
+              <a href="#" class="d-none d-md-block info-box-icon  bg-dark elevation-1" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="See Withdrawal"><i class="fa fa-credit-card"></i></a>
+
+              <div class="info-box-content">
+                <span class="info-box-text">Signal Subscription</span>
+                <span class="info-box-number lead">
+                                       <%=user.signal%>
+                                  </span>
+              </div>
+              <!-- /.info-box-content -->
+            </div>
+            <!-- /.info-box -->
+          </div>
+          
+          <div class="col-12 col-sm-3 col-md-12 ">
+            <div class="info-box shadow p-3  bg-dark">
+              <a href="#" class="d-none d-md-block info-box-icon bg-dark elevation-1" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="See Notification"><i class="fa fa-bullhorn"></i></a>
+
+              <div class="info-box-content">
+                <span class="info-box-text">Notification</span>
+                <span class="info-box-number lead">
+                                            <span class="text-danger"><%=user.notification%></span>
+                                        </span>
+              </div>
+              <!-- /.info-box-content -->
+            </div>
+            <!-- /.info-box -->
+          </div>
+        
+          <!-- /.col -->
+          <!-- Financial Charts  -->
+          <!-- TradingView Widget BEGIN -->
+<div class="tradingview-widget-container" style="width: 100%; height: 74px;">
+  <iframe scrolling="no" allowtransparency="true" frameborder="0" src="https://www.tradingview-widget.com/embed-widget/ticker-tape/?locale=en#%7B%22symbols%22%3A%5B%7B%22proName%22%3A%22FOREXCOM%3ASPXUSD%22%2C%22title%22%3A%22S%26P%20500%22%7D%2C%7B%22proName%22%3A%22FOREXCOM%3ANSXUSD%22%2C%22title%22%3A%22Nasdaq%20100%22%7D%2C%7B%22proName%22%3A%22FX_IDC%3AEURUSD%22%2C%22title%22%3A%22EUR%2FUSD%22%7D%2C%7B%22proName%22%3A%22BITSTAMP%3ABTCUSD%22%2C%22title%22%3A%22BTC%2FUSD%22%7D%2C%7B%22proName%22%3A%22BITSTAMP%3AETHUSD%22%2C%22title%22%3A%22ETH%2FUSD%22%7D%2C%7B%22description%22%3A%22LTC%2FUSD%22%2C%22proName%22%3A%22LITECOIN%22%7D%2C%7B%22description%22%3A%22XRP%2FUSD%22%2C%22proName%22%3A%22BITSTAMP%3AXRPUSD%22%7D%2C%7B%22description%22%3A%22ETH%2FXBT%22%2C%22proName%22%3A%22KRAKEN%3AETHXBT%22%7D%5D%2C%22colorTheme%22%3A%22dark%22%2C%22isTransparent%22%3Afalse%2C%22largeChartUrl%22%3A%22%22%2C%22displayMode%22%3A%22adaptive%22%2C%22width%22%3A%22100%25%22%2C%22height%22%3A46%2C%22utm_source%22%3A%22marketindex-exchange.com%22%2C%22utm_medium%22%3A%22widget%22%2C%22utm_campaign%22%3A%22ticker-tape%22%2C%22page-uri%22%3A%22marketindex-exchange.com%2Fdashboard%2Fdashboard.php%22%7D" title="ticker tape TradingView widget" lang="en" style="user-select: none; box-sizing: border-box; display: block; height: 74px; width: 100%;"></iframe>
+  
+<style>
+	.tradingview-widget-copyright {
+		font-size: 13px !important;
+		line-height: 32px !important;
+		text-align: center !important;
+		vertical-align: middle !important;
+		/* @mixin sf-pro-display-font; */
+		font-family: -apple-system, BlinkMacSystemFont, 'Trebuchet MS', Roboto, Ubuntu, sans-serif !important;
+		color: #B2B5BE !important;
+	}
+
+	.tradingview-widget-copyright .blue-text {
+		color: #2962FF !important;
+	}
+
+	.tradingview-widget-copyright a {
+		text-decoration: none !important;
+		color: #B2B5BE !important;
+	}
+
+	.tradingview-widget-copyright a:visited {
+		color: #B2B5BE !important;
+	}
+
+	.tradingview-widget-copyright a:hover .blue-text {
+		color: #1E53E5 !important;
+	}
+
+	.tradingview-widget-copyright a:active .blue-text {
+		color: #1848CC !important;
+	}
+
+	.tradingview-widget-copyright a:visited .blue-text {
+		color: #2962FF !important;
+	}
+	</style></div>
+<!-- TradingView Widget END -->
+              
+            <div class="col-lg-12 col-xs-11 p-0 mb-3">
+                <div class="card bg-white p-0">
+                  <div class="card-header bg-white">
+                    Forex-Cross-Rates Chart
+                    <!-- <span class="pull-right"><a href="/subscribed-users" class=" text-white hover-danger">View all</a></span> -->
+                  </div>
+                  <div class="card-body p-0">
+                    <!-- TradingView Widget BEGIN -->
+                    <div class="tradingview-widget-container" style="width: 100%; height: 400px;">
+                      <iframe scrolling="no" allowtransparency="true" frameborder="0" src="https://www.tradingview-widget.com/embed-widget/forex-cross-rates/?locale=en#%7B%22width%22%3A%22100%25%22%2C%22height%22%3A400%2C%22currencies%22%3A%5B%22BTC%22%2C%22EUR%22%2C%22USD%22%2C%22JPY%22%2C%22GBP%22%2C%22CHF%22%2C%22AUD%22%2C%22CAD%22%2C%22NZD%22%2C%22CNY%22%2C%22TRY%22%2C%22SEK%22%2C%22NOK%22%5D%2C%22isTransparent%22%3Afalse%2C%22colorTheme%22%3A%22dark%22%2C%22utm_source%22%3A%22marketindex-exchange.com%22%2C%22utm_medium%22%3A%22widget%22%2C%22utm_campaign%22%3A%22forex-cross-rates%22%2C%22page-uri%22%3A%22marketindex-exchange.com%2Fdashboard%2Fdashboard.php%22%7D" title="forex cross-rates TradingView widget" lang="en" style="user-select: none; box-sizing: border-box; display: block; height: 100%; width: 100%;"></iframe>
+                      <!-- <div class="tradingview-widget-copyright"><a href="https://www.tradingview.com/markets/currencies/forex-cross-rates/" rel="noopener" target="_blank"><span class="blue-text">Forex Rates</span></a> by TradingView</div> -->
+                      
+                    <style>
+	.tradingview-widget-copyright {
+		font-size: 13px !important;
+		line-height: 32px !important;
+		text-align: center !important;
+		vertical-align: middle !important;
+		/* @mixin sf-pro-display-font; */
+		font-family: -apple-system, BlinkMacSystemFont, 'Trebuchet MS', Roboto, Ubuntu, sans-serif !important;
+		color: #B2B5BE !important;
+	}
+
+	.tradingview-widget-copyright .blue-text {
+		color: #2962FF !important;
+	}
+
+	.tradingview-widget-copyright a {
+		text-decoration: none !important;
+		color: #B2B5BE !important;
+	}
+
+	.tradingview-widget-copyright a:visited {
+		color: #B2B5BE !important;
+	}
+
+	.tradingview-widget-copyright a:hover .blue-text {
+		color: #1E53E5 !important;
+	}
+
+	.tradingview-widget-copyright a:active .blue-text {
+		color: #1848CC !important;
+	}
+
+	.tradingview-widget-copyright a:visited .blue-text {
+		color: #2962FF !important;
+	}
+	</style></div>
+                    <!-- TradingView Widget END -->
+                  </div>
+              </div>
+            </div>
+
+          <!-- Financial Charts  -->
+          </div>
+    </div>
+    </section>
+    <!-- /.content -->
+  </div>
+  <!-- /.content-wrapper -->
+
+
+  <%- include('partials/dashboardFooter')%>

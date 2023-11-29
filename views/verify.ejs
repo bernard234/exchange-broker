@@ -1,0 +1,80 @@
+<%- include('partials/dashboardHeader')%>
+
+<!-- Content Wrapper. Contains page content -->
+<div class="content-wrapper" style="min-height: 688.391px;">
+    <!-- Content Header (Page header) -->
+		<section class="content-header">
+      <div class="container-fluid">
+        <div class="row mb-2">
+          <div class="col-sm-6">
+            <h1>User Verification</h1>
+          </div>
+          <div class="col-sm-6">
+            <ol class="breadcrumb float-sm-right">
+              <li class="breadcrumb-item"><a href="dashboard">Home</a></li>
+              <li class="breadcrumb-item active">User Verification</li>
+            </ol>
+          </div>
+        </div>
+      </div><!-- /.container-fluid -->
+    </section>
+
+     <!-- Main content -->
+     <section class="content">
+        <div class="container-fluid">
+        <div class="row">
+          <!-- right column -->
+          <div class="col-md-12">
+              
+  
+    
+  
+    
+              <div class="col-md-7 mx-auto">
+                    <!-- Role Creation -->
+                        <div class="card">
+                          <form class="" method="post" action="/verify/<%=user._id%>" enctype="multipart/form-data">
+                            <!-- <input type="hidden" name="" value="">                       -->
+                              <!-- form start -->
+                          <div class="card-body">
+                                <div class="row">
+                                                                  <div class="col-md-12 mb-3">
+                                    <h3 class="pull-right">Upload Identification</h3>
+                                  </div>
+                                  <div class="col-md-12">
+                                    <div class="form-group">
+                                        <div class="col-sm-12">
+                                            <label for="plan_name" class="control-label">Identification Document</label>
+                                            <input type="file" name="image" class="form-control " id="id_card" required="" accept="image/">
+                                                                                    </div>
+                                    </div>
+                                  </div>
+                                </div>
+                           </div>
+                            <!-- /.card-body -->
+                          <div class="card-footer">
+                              <div class="col-md-8 mx-auto">
+                                 <button type="submit" onclick="alert('Identification document uploaded successfully! Wait for administration to verify your trade account')" name="verify" class="btn btn-info col-sm-12">Upload Identification</button>
+                              </div>
+                            </div>
+                            <!-- Role Creation -->
+                        </form>
+                  <!-- form end -->
+                  </div>
+                  <!-- /.card-body -->
+              </div>
+            </div>
+            <!-- /.card -->
+          </div>
+          <!--/.col (right) -->
+        </div>
+      </section>
+      <!-- /.content -->
+    </div>
+    <!-- /.content-wrapper -->
+
+
+
+
+
+<%- include('partials/dashboardFooter')%>

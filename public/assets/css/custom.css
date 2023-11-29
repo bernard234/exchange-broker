@@ -1,0 +1,36 @@
+.sidebar-light-light .sidebar .sidebar-active{
+    background: rgba(52, 58, 64, 1);
+    color: #ffffff;
+  }
+  .sidebar-dark-light .sidebar .sidebar-active{
+    background: rgba(247, 247, 247, 0.1);
+    color: #ffffff;
+  }
+  
+  .sidebar-light-light .sidebar nav ul li a:hover {
+    background: rgba(52, 58, 64, 1) !important;
+    color: #ffffff !important;
+  }
+  
+  .sidebar-light-light .sidebar {
+    color: #343a40;
+  }
+  
+  .select2-container .select2-selection--single{
+    height: calc(2.25rem + 2px) !important;
+  }
+  
+  .sidebar-light-light .sidebar .nav .nav-item.active .nav-link {
+    background: rgba(52, 58, 64, 1) !important;
+    color: #ffffff !important;
+  }
+  
+  .sidebar-dark-light .sidebar .nav .nav-item.active .nav-link{
+    background: rgba(247, 247, 247, 0.1);
+    color: #ffffff;
+  }
+  
+  .payment-method img{
+    max-width:70%;
+  }
+  

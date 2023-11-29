@@ -1,0 +1,129 @@
+<%- include('partials/_header'); -%>
+
+<section class=" auth">
+    <div class="container">
+        <div class="pb-3 row justify-content-center">
+
+            <div class="col-12 col-md-6 col-lg-6 col-sm-10 col-xl-6">
+                <!-- <div class="text-center">
+                   <a href="/"><img src="asset/logo.png" alt="" class="mb-3 img-fluid auth__logo"></a> 
+                </div> -->
+                
+                                                                    <div class="bg-white shadow card login-page roundedd border-1 ">
+                    <div class="card-body">
+                        <h4 class="text-center card-title">User Login</h4>
+                        <form method="POST" action="/login" class="mt-4 login-form">
+                             <input type="hidden"> 
+                                <div class="row">
+                                <div class="col-lg-12">
+                                    <div class="form-group">
+                                        <label>Your Email</label>
+                                        <div class="position-relative">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-mail fea icon-sm icons"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                                            <input type="email" class="pl-5 form-control" name="email" value="email"  placeholder="name@example.com" required>
+                                        </div>
+                                        <span  class="email error"></span>
+                                    </div>
+                                </div>
+                                <!--end col-->
+
+                                <div class="col-lg-12">
+                                    <div class="form-group">
+                                        <label>Password</label>
+                                        <div class="position-relative">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-key fea icon-sm icons"><path d="M21 2l-2 2m-7.61 7.61a5.5 5.5 0 1 1-7.778 7.778 5.5 5.5 0 0 1 7.777-7.777zm0 0L15.5 7.5m0 0l3 3L22 7l-3-3m-3.5 3.5L19 4"></path></svg>
+                                            <input type="password" class="pl-5 form-control" name="password" value="password" placeholder="Enter Password" required>
+                                          
+                                        </div>
+                                        <span  class="password error"></span>
+                                    </div>
+                                </div>
+                                <!--end col-->
+
+                                <div class="col-lg-12">
+                                    <div class="d-flex justify-content-between">
+                                        <div class="form-group">
+                                            <div class="custom-control custom-checkbox">
+                                                <input type="checkbox" class="custom-control-input" id="customCheck1" name="remember">
+                                                <label class="custom-control-label" for="customCheck1">Remember
+                                                    me</label>
+                                            </div>
+                                        </div>
+                                        
+                                    </div>
+                                </div>
+                                <!--end col-->
+
+                                <div class="mb-0 col-lg-12">
+                                    <button class="btn btn-primary btn-block pad" type="submit">Sign in</button>
+                                </div>
+                                <!--end col-->
+
+                                <div class="mt-4 text-center col-lg-12">
+                                                                        </div>
+                                <!--end col-->
+                                <!--end col-->
+
+                                <div class="text-center col-12">
+                                    <p class="mt-3 mb-0"><small class="mr-2 text-dark">Don't have an account
+                                            ?</small> <a href="/register" class="text-dark font-weight-bold">Sign Up</a></p>
+                                </div>
+                                <!--end col-->
+                                
+                                <div class="text-center col-12">
+                                    <p class="mt-4 mb-0"><small class="mr-2 text-dark">© Copyright  2023 &nbsp; maxtrades-exchange &nbsp; All Rights Reserved.</small>
+                                    </p>
+                                </div>
+                            </div>
+                            <!--end row-->
+                        </form>
+                    </div>
+                </div>
+                <!---->
+            </div>
+            <!--end col-->
+        </div>
+        <!--end row-->
+    </div>
+    <!--end container-->
+</section>
+<!--end section-->
+
+
+<script>
+    const form = document.querySelector('form');
+     const emailError = document.querySelector('.email.error');
+     const passwordError = document.querySelector('.password.error');
+     form.addEventListener('submit', async (e) => {
+       e.preventDefault();
+       // reset errors
+       emailError.textContent = '';
+       passwordError.textContent = '';
+       // get values
+       const email = form.email.value;
+       const password = form.password.value;
+       try {
+         const res = await fetch('/login', { 
+           method: 'POST', 
+           body: JSON.stringify({ email, password }),
+           headers: {'Content-Type': 'application/json'}
+         });
+         const data = await res.json();
+         // console.log(data);
+         if (data.errors) {
+           emailError.textContent = data.errors.email;
+           passwordError.textContent = data.errors.password;
+         }
+         if (data.user) {
+           location.assign('/dashboard');
+         }
+       }
+       catch (err) {
+         console.log(err);
+       }
+     });
+   
+   
+   </script>
+
+<%- include('partials/_footer'); -%>
